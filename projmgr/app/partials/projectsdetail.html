@@ -1,0 +1,32 @@
+<div ng-if="project!==null">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Showing details for selected projects</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <b>Name</b>
+        </div>
+        <div class="col-xs-5">
+            <b>Description</b>
+        </div>
+        <div class="col-xs-3">
+            <b>Weather</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <p class="lead">{{project.name}}</p>
+        </div>
+        <div class="col-xs-5">
+            {{project.des}}
+        </div>
+        <div class="col-xs-3">
+            <b>{{weather}}</b>
+        </div>
+    </div>
+</div>
+<div ng-if="project===null">
+    Please click on a project on the left to select
+</div>

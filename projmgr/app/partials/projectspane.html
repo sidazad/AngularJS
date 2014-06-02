@@ -1,0 +1,46 @@
+
+
+<div class="row">
+    <div class="col-xs-3">
+        <input type="text" ng-model="model.projname" tooltip="Please enter name of Project..." tooltip-trigger="focus" tooltip-placement="right"/>
+    </div>
+    <div class="col-xs-6">
+        <input type="text" ng-model="model.projdes" tooltip="Please describe the  Project..." tooltip-trigger="focus" tooltip-placement="top"/>
+    </div>
+    <div class="col-xs-2">
+        <button type="button" class="btn btn-primary" ng-click="addproject()">Add</button>
+    </div>
+</div>
+
+
+<div class="row" ng-repeat="project in projects | filter: searchText" ng-click="projselected(project)" ng-class="{red: deleted[$index]}">
+     <div class="col-xs-3"><p class="lead">{{project.name}}</p></div>
+    <div class="col-xs-6">{{project.des}}</div>
+    <div class="col-xs-3"><input type="checkbox" ng-model="deleted[$index]" ng-true-value="{{project.name}}" ng-false-value=""/></div>
+</div>
+
+<div class="row">
+    <div class="col-xs-8">&nbsp;
+    </div>
+</div>
+ <div class="row">
+    <div class="col-xs-1">
+        Search:
+    </div>
+    <div class="col-xs-1">
+       <input ng-model="searchText"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        &nbsp;
+    </div>
+    <div class="col-xs-6">
+        &nbsp;
+    </div>
+    <div class="col-xs-2">
+        <button type="button" class="btn btn-warning" ng-click="deleteprojects()">Delete</button>
+    </div>
+</div>
+        <div class="footnote">*Click project to see details</div>
